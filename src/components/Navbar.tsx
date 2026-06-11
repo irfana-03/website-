@@ -43,9 +43,21 @@ export default function Navbar() {
     };
   }, [setActiveSection]);
 
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setMobileOpen(false);
+  };
+
+  const handleReserve = () => {
+    setMobileOpen(false);
+    openReservation();
   };
 
   return (
@@ -53,35 +65,47 @@ export default function Navbar() {
       <div className="top-banner">
         LIVE MUSIC EVERY SUNDAY | 8PM ONWARDS
       </div>
-      <nav className={`navbar glass-panel ${scrolled ? "navbar-scrolled" : ""}`}>
+      <nav className={`navbar glass-panel ${scrolled ? "navbar-scrolled" : ""} ${mobileOpen ? "navbar-open" : ""}`}>
         <div className="container navbar-inner">
           <button className="navbar-logo" onClick={() => scrollTo("home")}>
             SUNDAYS
-          </button>
-
-          <div className={`navbar-links ${mobileOpen ? "open" : ""}`}>
-            {NAV_LINKS.map((link) => (
-              <button
-                key={link.id}
-                className={`nav-link ${activeSection === link.id ? "active" : ""}`}
-                onClick={() => scrollTo(link.id)}
-              >
-                <span className="nav-link-text">{link.label}</span>
-                <span className="nav-link-underline" />
-              </button>
-            ))}
-          </div>
-
-          <button className="navbar-cta btn-shimmer" onClick={openReservation}>
-            Book a Table
           </button>
 
           <button
             className="navbar-mobile-toggle"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
           >
             {mobileOpen ? "✕" : "☰"}
+          </button>
+
+          <button className="navbar-cta btn-shimmer" onClick={openReservation}>
+            Book a Table
+          </button>
+        </div>
+
+        {mobileOpen && (
+          <button
+            className="navbar-backdrop"
+            aria-label="Close menu"
+            onClick={() => setMobileOpen(false)}
+          />
+        )}
+
+        <div className={`navbar-links ${mobileOpen ? "open" : ""}`}>
+          {NAV_LINKS.map((link) => (
+            <button
+              key={link.id}
+              className={`nav-link ${activeSection === link.id ? "active" : ""}`}
+              onClick={() => scrollTo(link.id)}
+            >
+              <span className="nav-link-text">{link.label}</span>
+              <span className="nav-link-underline" />
+            </button>
+          ))}
+          <button className="navbar-mobile-cta btn-shimmer" onClick={handleReserve}>
+            Book a Table
           </button>
         </div>
       </nav>

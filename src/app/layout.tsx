@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
@@ -18,6 +18,13 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "SUNDAYS | Premium Restobar Chennai",
   description: "Experience the Midnight Luxe aesthetic at Sundays Restobar.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#131313",
 };
 
 export default function RootLayout({
