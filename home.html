@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SUNDAYS Restobar - Where Great Food Meets Great Company</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-container": "#464541",
+                        "on-tertiary-fixed-variant": "#484743",
+                        "on-secondary-container": "#ffd9bc",
+                        "on-primary": "#3c2f00",
+                        "on-primary-container": "#554300",
+                        "on-secondary-fixed-variant": "#6c3a00",
+                        "primary-container": "#d4af37",
+                        "primary": "#f2ca50",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#ffb779",
+                        "on-background": "#e5e2e1",
+                        "secondary-container": "#955200",
+                        "on-tertiary-fixed": "#1c1c19",
+                        "error-container": "#93000a",
+                        "on-surface": "#e5e2e1",
+                        "tertiary-container": "#b5b2ae",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary": "#d1cdc9",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed": "#e6e2dd",
+                        "surface-container-highest": "#353534",
+                        "primary-fixed": "#ffe088",
+                        "surface-tint": "#e9c349",
+                        "surface-container": "#201f1f",
+                        "secondary": "#ffb779",
+                        "surface-dim": "#131313",
+                        "outline-variant": "#4d4635",
+                        "outline": "#99907c",
+                        "on-secondary-fixed": "#2e1500",
+                        "error": "#ffb4ab",
+                        "surface": "#131313",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-secondary": "#4c2700",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-bright": "#3a3939",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-surface-variant": "#d0c5af",
+                        "on-primary-fixed": "#241a00",
+                        "tertiary-fixed-dim": "#c9c6c1",
+                        "on-tertiary": "#31302d",
+                        "secondary-fixed": "#ffdcc1",
+                        "background": "#131313",
+                        "inverse-primary": "#735c00",
+                        "inverse-on-surface": "#313030",
+                        "surface-variant": "#353534",
+                        "surface-container-high": "#2a2a2a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "24px",
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "section-gap": "160px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Playfair Display"],
+                        "label-caps": ["Montserrat"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Montserrat"],
+                        "body-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "600"}],
+                        "display-lg": ["72px", {"lineHeight": "84px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+                        "display-lg-mobile": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "28px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "32px", "letterSpacing": "0.03em", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            z-index: -1;
+            margin: -1px;
+            border-radius: inherit;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.5) 0%, rgba(28, 27, 27, 0) 50%, rgba(28, 27, 27, 0) 100%);
+        }
+        .gold-border-gradient {
+            border-image: linear-gradient(to right, #d4af37, #1c1b1b) 1;
+        }
+        .floating-input:focus + label,
+        .floating-input:not(:placeholder-shown) + label {
+            transform: translateY(-1.5rem) scale(0.85);
+            color: #f2ca50;
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(242, 202, 80, 0.3);
+        }
+        .hover-shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        .hover-shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+            transform: skewX(-20deg);
+            transition: all 0.5s ease;
+        }
+        .hover-shimmer:hover::after {
+            left: 150%;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen overflow-x-hidden selection:bg-primary/30 selection:text-primary">
+<!-- TopAppBar Banner -->
+<div class="bg-primary dark:bg-primary text-on-primary dark:text-on-primary font-label-caps text-label-caps relative w-full py-2 text-center flex justify-center items-center px-4 z-[60]">
+        LIVE MUSIC EVERY SUNDAY | 8PM ONWARDS
+    </div>
+<!-- TopNavBar -->
+<nav class="bg-surface/60 dark:bg-surface/60 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm fixed top-8 w-full z-50 transition-all duration-300 hover:backdrop-brightness-125" id="navbar">
+<div class="flex justify-between items-center px-margin-desktop py-4 w-full max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
+<div class="font-display-lg text-headline-md tracking-tighter text-primary dark:text-primary">SUNDAYS</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-caps text-label-caps uppercase text-glow" href="#">Home</a>
+<a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase" href="#">About</a>
+<a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase" href="#">Menu</a>
+<a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase" href="#">Gallery</a>
+<a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase" href="#">Events</a>
+<a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase" href="#">Contact</a>
+</div>
+<button class="hidden md:inline-block px-6 py-3 bg-primary text-on-primary font-label-caps text-label-caps rounded hover-shimmer transition-all">Book a Table</button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" style="font-size: 28px;">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+
+<div class="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background z-10"></div>
+<div class="relative z-20 text-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col items-center">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-6 text-glow leading-tight max-w-4xl">
+                Where Great Food<br/>
+<span class="text-primary italic">Meets Great Company</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-10 opacity-90">
+                Experience the atmospheric energy of Chennai's premier midnight lounge. A curation of Mangalorean heritage, global culinary techniques, and liquid craftsmanship.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="px-8 py-4 bg-primary text-on-primary font-label-caps text-label-caps rounded tracking-widest hover-shimmer transition-all text-center" href="#menu">
+                    EXPLORE MENU
+                </a>
+<a class="px-8 py-4 bg-transparent border border-outline-variant text-on-surface font-label-caps text-label-caps rounded tracking-widest hover:border-primary hover:text-primary transition-all text-center" href="#reserve">
+                    RESERVE A TABLE
+                </a>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce opacity-50">
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</div>
+</header>
+<!-- Featured Dishes (Bento Grid) -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="menu">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16">
+<div class="max-w-xl">
+<h2 class="font-label-caps text-label-caps text-primary tracking-widest mb-4">CURATED SELECTIONS</h2>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Culinary Excellence</h3>
+</div>
+<a class="group flex items-center gap-2 text-primary font-label-caps text-label-caps mt-6 md:mt-0" href="#">
+                VIEW FULL MENU 
+                <span class="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[300px] md:auto-rows-[400px]">
+<!-- Featured Dish 1 -->
+<div class="md:col-span-8 relative rounded-xl overflow-hidden group">
+<div class="absolute inset-0 bg-surface-container-high transition-transform duration-700 group-hover:scale-105" data-alt="A cinematic, high-end editorial shot of Mangalorean Chicken Ghee Roast served on a dark, rustic ceramic plate. The rich, deep red of the roasted spices contrasts vividly against a sleek, dark granite table top. Dramatic, moody lighting from the top left creates specular highlights on the glossy sauce and perfectly roasted chicken pieces. The atmosphere is sophisticated and appetizing, fitting a luxury restobar environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBiZSSXVBVerI19IcY4s-tnar-k8Zt6U2khK91Kw1uu5QuF0E9WIiVt09vjhayCDx25kPzYatVFivMoc-PzHpHTnuoIyiW7lBlFY7sM_O8U9q4q4TeX33RLSc58jvRgpIR9p4L_Kn_TGbhI0tC5VnD_IVB7He9gRSzo6mD2TqgXzlbmfqDmszwvS-nYNEVAg0ntNUMCIpH7bgQgK1KVWSJ5mOn3Vt6hOmubU17-6hDEoF6fuMXaWTY8ynflVHRAgBxTPiQBdrrJlcs'); background-size: cover; background-position: center;">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full glass-card border-none rounded-none rounded-b-xl border-t border-outline-variant/30">
+<span class="inline-block px-3 py-1 bg-surface-container-lowest/80 text-primary font-label-caps text-[10px] tracking-widest mb-3 rounded-sm border border-outline-variant/50">SIGNATURE</span>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">Mangalorean Chicken Ghee Roast</h4>
+<p class="font-body-md text-on-surface-variant text-sm md:text-base line-clamp-2">A heritage recipe elevated. Slow-roasted in clarified butter with a proprietary blend of hand-pounded Byadgi chilies and coastal spices.</p>
+</div>
+</div>
+<!-- Featured Dish 2 -->
+<div class="md:col-span-4 relative rounded-xl overflow-hidden group">
+<div class="absolute inset-0 bg-surface-container-high transition-transform duration-700 group-hover:scale-105" data-alt="A close-up, premium photograph of a gourmet Pulled Chicken Pizza with a charred, artisanal crust. The pizza sits on a dark, textured slate board in a dimly lit, high-end lounge setting. Golden ambient light catches the melted cheese and the glossy glaze on the pulled chicken. The overall aesthetic is dark, moody, and deeply inviting, emphasizing culinary craftsmanship." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXwJxWE9e5A13o3RJKUOkGG5ApA6qHRDfj8F0gK5sxtTyLkgN1zADYl_Jin_7qahO0cMGEzfgzYbgC1Xh_-66LVs-6ZDFJkGGZJt2FE35fYQLAKAh7qFQBj0qYvmATZ9C4wt1iFa6yf3hWvkdTwMkZNeVJHE8j1vgoHskJosvSaoUDLP-UIum-_RsZlf7vXcMsXnX-bdrqVD3jKAtVjG79zfWrgdI1wkQu2KQ0frIuS9ydGPi1Jemgu0qNPegOs16IE_w4XJxcYlE'); background-size: cover; background-position: center;">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<h4 class="font-headline-md text-2xl text-on-surface mb-2 font-semibold">Pulled Chicken Pizza</h4>
+<p class="font-body-md text-on-surface-variant text-sm line-clamp-2">Wood-fired perfection with smoky pulled chicken, caramelized onions, and our house blend of aged cheeses.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Cocktails & Atmosphere -->
+<section class="py-section-gap bg-surface-container-low border-y border-outline-variant/20 relative overflow-hidden">
+<!-- Abstract Gold Glow -->
+<div class="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px] -translate-y-1/2 pointer-events-none"></div>
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+<div class="md:col-span-5 order-2 md:order-1">
+<h2 class="font-label-caps text-label-caps text-primary tracking-widest mb-4">LIQUID CRAFTSMANSHIP</h2>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-6">Alchemy at Midnight</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                        Our bar is a stage where mixology meets storytelling. Each signature cocktail is a delicate balance of premium spirits, house-made infusions, and theatrical presentation, designed to complement the energetic pulse of the lounge.
+                    </p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">wine_bar</span>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">The Madras Smoked Old Fashioned</h4>
+<p class="text-on-surface-variant text-sm">Bourbon, spiced jaggery syrup, hickory smoke.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">local_bar</span>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">Coromandel Sunset</h4>
+<p class="text-on-surface-variant text-sm">Gin, fresh hibiscus extract, citrus dust.</p>
+</div>
+</li>
+</ul>
+<a class="inline-block border-b border-primary text-primary font-label-caps text-label-caps pb-1 hover:text-on-surface hover:border-on-surface transition-colors" href="#">EXPLORE DRINKS</a>
+</div>
+<div class="md:col-span-7 order-1 md:order-2">
+<div class="glass-card p-4 rounded-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+<img alt="Signature Cocktails" class="w-full h-auto rounded-xl shadow-2xl grayscale-[20%] hover:grayscale-0 transition-all duration-500" data-alt="A dramatic, shallow-depth-of-field photograph of a bartender pouring a luminous, golden cocktail into a crystal coupe glass. The background is a beautifully blurred, high-end restobar featuring backlit shelves filled with premium liquor bottles. The lighting highlights the amber hues of the drink against the deep, dark ambiance of the room, evoking a sophisticated, cinematic glassmorphism aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAex3nhTJbqamTlrgmCrY13bfQqWo-2dSEjUX99n3VfuelO0z6HJo_H-g8rrb_FlYX1Jm5nJaWumehHg5D3rUcev5RChiiz8qboz-WcjOWqhQrPb4BNFmHTfxWhgk6e4kAGXuJf9atb-73bhYVx-m7au8Q3MM2CRTofUOJHVduvZZaPYOf3kgsVmz70vlP_wQuUOoo4_gd_CQRkz2eRmuHVijW8HmDRJbGITzX55Xg8vXclvvajmdIYtMDkNp4Jvhw-RxiXuqDF180"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reservation CTA -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="reserve">
+<div class="glass-card rounded-2xl p-8 md:p-16 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+<div class="max-w-2xl mx-auto text-center relative z-10">
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-lg text-on-surface mb-4">Secure Your Table</h2>
+<p class="font-body-md text-on-surface-variant mb-10">Join us for an unforgettable evening of culinary artistry and curated soundscapes.</p>
+<form class="space-y-6 text-left">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="relative">
+<input class="floating-input w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary text-on-surface px-0 py-2 peer transition-colors" id="name" placeholder=" " type="text"/>
+<label class="absolute left-0 top-2 text-on-surface-variant font-label-caps text-label-caps transition-all duration-300 peer-focus:-translate-y-6 peer-focus:text-[10px] peer-focus:text-primary pointer-events-none" for="name">GUEST NAME</label>
+</div>
+<div class="relative">
+<input class="floating-input w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary text-on-surface px-0 py-2 peer transition-colors" id="phone" placeholder=" " type="tel"/>
+<label class="absolute left-0 top-2 text-on-surface-variant font-label-caps text-label-caps transition-all duration-300 peer-focus:-translate-y-6 peer-focus:text-[10px] peer-focus:text-primary pointer-events-none" for="phone">PHONE NUMBER</label>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="relative">
+<input class="floating-input w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary text-on-surface px-0 py-2 peer transition-colors [color-scheme:dark]" id="date" placeholder=" " type="date"/>
+<label class="absolute left-0 top-2 text-on-surface-variant font-label-caps text-label-caps transition-all duration-300 peer-focus:-translate-y-6 peer-focus:text-[10px] peer-focus:text-primary pointer-events-none" for="date">DATE</label>
+</div>
+<div class="relative">
+<input class="floating-input w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary text-on-surface px-0 py-2 peer transition-colors [color-scheme:dark]" id="time" placeholder=" " type="time"/>
+<label class="absolute left-0 top-2 text-on-surface-variant font-label-caps text-label-caps transition-all duration-300 peer-focus:-translate-y-6 peer-focus:text-[10px] peer-focus:text-primary pointer-events-none" for="time">TIME</label>
+</div>
+<div class="relative">
+<select class="floating-input w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary text-on-surface px-0 py-2 peer transition-colors appearance-none cursor-pointer" id="guests">
+<option class="bg-surface" value="2">2 Guests</option>
+<option class="bg-surface" value="3">3 Guests</option>
+<option class="bg-surface" value="4">4 Guests</option>
+<option class="bg-surface" value="5+">5+ Guests</option>
+</select>
+<span class="material-symbols-outlined absolute right-0 top-2 text-on-surface-variant pointer-events-none">arrow_drop_down</span>
+<label class="absolute left-0 top-2 text-on-surface-variant font-label-caps text-label-caps transition-all duration-300 -translate-y-6 text-[10px] text-primary pointer-events-none" for="guests">GUESTS</label>
+</div>
+</div>
+<div class="pt-6 text-center">
+<button class="w-full md:w-auto px-12 py-4 bg-primary text-on-primary font-label-caps text-label-caps rounded tracking-widest hover-shimmer transition-all" type="submit">
+                            CONFIRM RESERVATION
+                        </button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest text-primary dark:text-primary font-body-md text-body-md w-full py-section-gap border-t border-outline-variant/20 grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop max-w-container-max mx-auto flat no shadows">
+<div class="md:col-span-4 flex flex-col gap-6">
+<div class="font-display-lg text-headline-lg text-primary">SUNDAYS</div>
+<p class="text-on-surface-variant text-sm max-w-xs">Chennai's premier destination for elevated culinary experiences and midnight socializing.</p>
+</div>
+<div class="md:col-span-8 flex flex-col md:flex-row justify-end gap-12 md:gap-24">
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-label-caps text-on-surface mb-2">CONNECT</h5>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-200" href="#">Instagram</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-200" href="#">Facebook</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-label-caps text-on-surface mb-2">VISIT</h5>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-200" href="#">Location</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-200" href="#">Book a Table</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-label-caps text-on-surface mb-2">STAY UPDATED</h5>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-200" href="#">Newsletter</a>
+</div>
+</div>
+<div class="col-span-1 md:col-span-12 mt-16 pt-8 border-t border-outline-variant/10 text-center text-sm text-on-surface-variant">
+            © 2024 SUNDAYS Restobar. All rights reserved.
+        </div>
+</footer>
+<script>
+        // Simple navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
+                nav.classList.remove('py-4');
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.add('py-4');
+                nav.classList.remove('py-2');
+                nav.classList.remove('shadow-md');
+            }
+        });
+
+        // Add inputs float label polyfill for date/time if needed
+        const inputs = document.querySelectorAll('.floating-input');
+        inputs.forEach(input => {
+            if(input.value) {
+                input.classList.add('has-value');
+            }
+            input.addEventListener('change', function() {
+                if(this.value) {
+                    this.classList.add('has-value');
+                } else {
+                    this.classList.remove('has-value');
+                }
+            });
+        });
+    </script>
+</body></html>
